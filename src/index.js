@@ -13,9 +13,7 @@ ReactDOM.render(
 	<Provider store={createStoreWithMiddleware(reducers)}>
 		<BrowserRouter>
 			<div>
-				<Switch>
-					<Route path="/" component={App} />
-				</Switch>
+				<App />
 			</div>
 		</BrowserRouter>
 	</Provider>,

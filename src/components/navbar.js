@@ -10,7 +10,7 @@ export default class Navigation extends Component {
 	    <Navbar collapseOnSelect fluid>
 		  <Navbar.Header>
 		    <Navbar.Brand>
-		      <a href="#brand">React-Bootstrap</a>
+		      <a href="/">React-Bootstrap</a>
 		    </Navbar.Brand>
 		    <Navbar.Toggle />
 		  </Navbar.Header>
@@ -24,7 +24,7 @@ export default class Navigation extends Component {
 		      </NavItem>
 		      <NavDropdown eventKey={3} title="Fernando Rosario" id="basic-nav-dropdown">
 		        <MenuItem eventKey={3.1}>Billing</MenuItem>
-		        <MenuItem eventKey={3.2}>Settings</MenuItem>
+		        <MenuItem eventKey={3.2} href="/profile">Profile</MenuItem>
 		        <MenuItem divider />
 		        <MenuItem eventKey={3.3}>Logout</MenuItem>
 		      </NavDropdown>
