@@ -29,7 +29,7 @@ export default class App extends Component {
 						<Switch>
 							<Route path="/account" component={ProfileSidenav} />
 							<Route path="/" component={Sidenav} />
-						</ Switch>
+						</Switch>
 					</Col>
 					<Col md={10}>
 						<Switch>
