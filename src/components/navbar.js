@@ -23,10 +23,12 @@ export default class Navigation extends Component {
 		        <Icon icon={questionCircleO} />
 		      </NavItem>
 		      <NavDropdown eventKey={3} title="Fernando Rosario" id="basic-nav-dropdown">
-		        <MenuItem eventKey={3.1}>Billing</MenuItem>
-		        <MenuItem eventKey={3.2} href="/profile">Profile</MenuItem>
+		        <MenuItem eventKey={3.1} href="/account/profile">Profile</MenuItem>
+		        <MenuItem eventKey={3.2} href="/account/settings">Settings</MenuItem>
+		        <MenuItem eventKey={3.3} href="/account/billing">Billing</MenuItem>
+		        <MenuItem eventKey={3.4} href="/account/security">Security</MenuItem>
 		        <MenuItem divider />
-		        <MenuItem eventKey={3.3}>Logout</MenuItem>
+		        <MenuItem eventKey={3.5}>Logout</MenuItem>
 		      </NavDropdown>
 		    </Nav>
 		  </Navbar.Collapse>

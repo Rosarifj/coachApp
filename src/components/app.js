@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import { Clearfix, Grid, Row, Col } from 'react-bootstrap';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Navigation from './navbar';
 import Sidenav from './sidenav';
 import ProfileSidenav from './profile_sidenav';
 import MainPanel from './mainpanel';
 import Footer from './footer';
-import { Route, Switch } from 'react-router-dom';
-
-
-const UsersPage = () => <div>Users Page</div>;
-const ProfilePage = () => <div>Profile Page</div>;
-const SettingsPage = () => <div>Settings Page</div>;
+import ClientsLayout from './clientsLayout';
+import CalendarLayout from './calendarLayout';
+import CompaniesLayout from './companiesLayout';
+import ContactsLayout from './contactsLayout';
+import DashboardLayout from './dashboardLayout';
+import KnowledgeLayout from './knowledgeLayout';
+import ReportsLayout from './reportsLayout';
+import SetupLayout from './setupLayout';
+import AccountLayout from './accountLayout';
 
 export default class App extends Component {
 
@@ -23,17 +27,24 @@ export default class App extends Component {
 				<Row className="show-grid">
 					<Col md={2}>
 						<Switch>
-							<Route path="/settings" component={ProfileSidenav} />
-							<Route path="/profile" component={ProfileSidenav} />
+							<Route path="/account" component={ProfileSidenav} />
 							<Route path="/" component={Sidenav} />
 						</ Switch>
 					</Col>
 					<Col md={10}>
-						<Route path="/" exact component={MainPanel} />
-      					<Route path="/dashboard" component={MainPanel} />
-      					<Route path="/users" component={UsersPage} />
-      					<Route path="/profile" component={ProfilePage} />
-      					<Route path="/settings" component={SettingsPage} />
+						<Switch>
+							<Route path="/" exact component={DashboardLayout} />
+	      					<Route path="/dashboard" component={DashboardLayout} />
+	      					<Route path="/clients" component={ClientsLayout} />
+	      					<Route path="/calendar" component={CalendarLayout} />
+	      					<Route path="/knowledge" component={KnowledgeLayout} />
+	      					<Route path="/reports" component={ReportsLayout} />
+	      					<Route path="/contacts" component={ContactsLayout} />
+	      					<Route path="/companies" component={CompaniesLayout} />
+	      					<Route path="/setup" component={SetupLayout} />
+	      					<Route path="/account" component={AccountLayout} />
+	      					<Redirect to="/" />
+	      				</Switch>
 					</Col>
 				</Row>
 				<Row className="show-grid">
